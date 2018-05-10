@@ -1,0 +1,14 @@
+framework: tensorflow
+classes:
+  - containerClass: classA
+    gpuNum: 1
+    image: tensorflow:1.4.1-gpu
+    execute:
+      - exec: ["/bin/bash","-c","python -u /dfsdata/heli3_data/train.py"]
+        path: /dfsdata/heli3_data/train.log
+topology:
+  - node: [P100-16276M]
+    containers:
+      - containerClass: classA
+        num: 1
+

@@ -1,0 +1,11 @@
+framework: ssh
+classes:
+  - containerClass: classA
+    gpuNum: 1
+    image: ubuntu:ssh-tf1.4.1
+topology:
+  - node: [M40-11443M]
+    containers:
+      - containerClass: classA
+        num: 1
+
